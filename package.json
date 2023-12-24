@@ -1,0 +1,16 @@
+{
+  "name": "chatbotwithgeminiai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.2"
+  }
+}
