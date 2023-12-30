@@ -5,9 +5,10 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const http = require('http');
 const socketIo = require('socket.io');
-
+const path = require('path');
 const app = express();
 const port = 3000;
+app.use(express.static(path.join(__dirname, 'public')));
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_AI_API_KEY);
 // const generationConfig = {
@@ -41,6 +42,9 @@ io.on('connection', (socketConnection) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'client.html'));
+})
 app.post('/generate', async (req, res) => {
   const { base64Image, prompt } = req.body
   // console.log(base64Image, prompt);

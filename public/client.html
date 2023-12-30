@@ -180,7 +180,7 @@
       });
       fetchButton.addEventListener("click", async ()=> {
         contentDiv.innerHTML = "";
-        const socket = io("http://localhost:3000");
+        const socket = io("https://geminiapi-9rsv.onrender.com");
         socket.on('connect', () => {
           console.log('Connected to server');
           loader.style.display = 'block';
@@ -199,8 +199,8 @@
         socket.on('disconnect', function () {
           console.log('Server has disconnected');
         });
-        // console.log(base64String)
-        const response = await fetch("http://localhost:3000/generate", {
+        console.log(base64String)
+        const response = await fetch("https://geminiapi-9rsv.onrender.com/generate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
