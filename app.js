@@ -57,7 +57,7 @@ app.post('/generate', async (req, res) => {
   try {
     let result
     if(base64Image){
-      const model = genAI.getGenerativeModel({ model: "gemini-pro-vision"});
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
       result = await model.generateContentStream([prompt, imagePart]);
     } else {
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
